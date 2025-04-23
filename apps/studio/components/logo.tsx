@@ -1,46 +1,31 @@
 export function Logo() {
   return (
     <svg
-      width="32"
-      height="32"
-      viewBox="0 0 32 32"
+      width="220.05"
+      height="86.06"
+      viewBox="0 0 220.05 86.06"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <title>Turbo Start</title>
-      <rect width="32" height="32" rx="16" fill="var(--card-fg-color)" />
-      <path
-        d="M4.68629 21.159C2.98673 19.4595 2.98673 16.704 4.68629 15.0044L12.1081 7.5826L18.2627 13.7373L10.841 21.159C9.14139 22.8586 6.38585 22.8586 4.68629 21.159Z"
-        fill="url(#paint0_linear_2_18)"
-      />
-      <path
-        d="M27.3137 10.841C25.6142 9.14139 22.8586 9.14139 21.1591 10.841L13.7373 18.2627L19.8919 24.4174L27.3137 16.9956C29.0133 15.2961 29.0133 12.5405 27.3137 10.841Z"
-        fill="url(#paint1_linear_2_18)"
-      />
-      <defs>
-        <linearGradient
-          id="paint0_linear_2_18"
-          x1="14.9316"
-          y1="10.9137"
-          x2="4.68629"
-          y2="21.159"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="var(--card-fg-color)" />
-          <stop offset="1" stopColor="var(--card-bg-color)" />
-        </linearGradient>
-        <linearGradient
-          id="paint1_linear_2_18"
-          x1="17.0684"
-          y1="21.0863"
-          x2="27.3137"
-          y2="10.841"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="var(--card-fg-color)" />
-          <stop offset="1" stopColor="var(--card-bg-color)" />
-        </linearGradient>
-      </defs>
+      <title>TMV Social</title>
+      <g>
+        <path
+          fill="var(--card-fg-color)"
+          d="M6.37,60.32v-27.56H0v-15.6H6.37V0H24.57V17.16h16.25v15.6H24.57v25.87c0,7.54,4.03,10.66,10.4,10.66,1.43,0,2.73-.13,4.03-.65v15.86c-1.69,.65-4.16,1.04-7.02,1.04-16.51,0-25.61-8.45-25.61-25.22Z"
+        />
+        <path
+          fill="var(--card-fg-color)"
+          d="M139.44,84.5h-18.2V40.82c0-5.72-4.16-9.88-9.75-9.88s-9.62,4.16-9.62,9.88v43.68h-18.2V40.82c0-5.72-4.16-9.88-9.75-9.88s-9.62,4.16-9.62,9.88v43.68h-18.2V41.08c0-15.34,12.22-26,27.69-26,8.32,0,14.95,3.12,19.24,8.58,4.55-5.46,11.31-8.58,19.5-8.58,15.6,0,26.91,10.66,26.91,26v43.42Z"
+        />
+        <path
+          fill="var(--card-fg-color)"
+          d="M160.44,84.5l-21.06-67.34h19.11l14.04,51.48h.52l13.91-51.48h18.98l-20.93,67.34h-24.57Z"
+        />
+        <path
+          fill="var(--card-fg-color)"
+          d="M199.12,75.66c0-5.72,4.81-10.4,10.53-10.4s10.4,4.68,10.4,10.4-4.81,10.4-10.4,10.4-10.53-4.68-10.53-10.4Z"
+        />
+      </g>
     </svg>
   );
 }
