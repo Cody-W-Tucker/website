@@ -1,0 +1,267 @@
+# Style Guidelines for Cody W Tucker's Consultant Website
+
+This document outlines the comprehensive style guidelines for Cody W Tucker's consultant website. These guidelines ensure consistency across all components, code, and design elements to create a cohesive, professional brand experience.
+
+## Table of Contents
+
+1. [Brand Overview](#brand-overview)
+2. [Design System](#design-system)
+3. [Code Style Guidelines](#code-style-guidelines)
+4. [Component Guidelines](#component-guidelines)
+5. [Documentation Standards](#documentation-standards)
+6. [Accessibility Standards](#accessibility-standards)
+
+## Brand Overview
+
+### Mission and Values
+
+Cody W Tucker offers consulting services with a focus on personal expertise and professional excellence. The brand is characterized by:
+
+- **Professional**: Clean, structured, and reliable
+- **Modern**: Contemporary design with cutting-edge technology
+- **Personal**: Reflecting Cody's individual expertise and approach
+- **Trustworthy**: Establishing credibility through design and content
+
+### Brand Voice
+
+- **Tone**: Professional but approachable
+- **Language**: Clear, concise, and jargon-free when possible
+- **Personality**: Confident, knowledgeable, and authentic
+
+## Design System
+
+### Colors
+
+#### Primary Colors
+
+- **Primary**: `hsl(230, 80%, 50%)` - Rich blue, used for primary actions and key UI elements
+- **Primary Foreground**: `hsl(0, 0%, 100%)` - White, for text on primary color backgrounds
+
+#### Secondary Colors
+
+- **Secondary**: `hsl(200, 65%, 45%)` - Teal blue, used for secondary actions and supporting UI elements
+- **Secondary Foreground**: `hsl(0, 0%, 100%)` - White, for text on secondary color backgrounds
+
+#### Neutral Colors
+
+- **Background**: `hsl(0, 0%, 100%)` - White, main background color
+- **Foreground**: `hsl(222, 47%, 11%)` - Dark blue-gray, main text color
+- **Muted**: `hsl(210, 40%, 96%)` - Light blue-gray, for muted/subdued UI elements
+- **Muted Foreground**: `hsl(215, 16%, 47%)` - Medium blue-gray, for text on muted backgrounds
+- **Card**: `hsl(0, 0%, 100%)` - White, card background
+- **Card Foreground**: `hsl(222, 47%, 11%)` - Dark blue-gray, card text
+
+#### Semantic Colors
+
+- **Accent**: `hsl(280, 65%, 60%)` - Purple, for accent UI elements
+- **Accent Foreground**: `hsl(0, 0%, 100%)` - White, for text on accent backgrounds
+- **Destructive**: `hsl(0, 84%, 60%)` - Red, for error states and destructive actions
+- **Destructive Foreground**: `hsl(0, 0%, 100%)` - White, for text on destructive backgrounds
+- **Border**: `hsl(214, 32%, 91%)` - Light gray with blue tint, for borders
+- **Input**: `hsl(214, 32%, 91%)` - Light gray with blue tint, for input fields
+- **Ring**: `hsl(230, 80%, 50%)` - Same as primary, for focus rings
+
+### Typography
+
+#### Font Families
+
+- **Primary Font**: Geist Sans - `font-geist` - Used for most text
+- **Monospace Font**: Geist Mono - `font-mono` - Used for code, technical content
+
+#### Font Sizes
+
+Follow the Tailwind CSS default scale for consistency:
+
+- `text-xs`: Extra small text
+- `text-sm`: Small text
+- `text-base`: Base text (body copy)
+- `text-lg`: Large text
+- `text-xl`: Extra large text
+- `text-2xl` through `text-9xl`: Headings
+
+#### Font Weights
+
+- `font-normal`: Regular text
+- `font-medium`: Medium emphasis
+- `font-semibold`: Semi-bold for sub-headings
+- `font-bold`: Bold for headings and emphasis
+
+#### Line Heights
+
+- `leading-none`: 1
+- `leading-tight`: 1.25
+- `leading-snug`: 1.375
+- `leading-normal`: 1.5
+- `leading-relaxed`: 1.625
+- `leading-loose`: 2
+
+### Spacing
+
+Follow the Tailwind CSS spacing scale for consistency across the application. Key spacing values:
+
+- `space-0`: 0px
+- `space-1`: 0.25rem (4px)
+- `space-2`: 0.5rem (8px)
+- `space-3`: 0.75rem (12px)
+- `space-4`: 1rem (16px)
+- `space-5`: 1.25rem (20px)
+- `space-6`: 1.5rem (24px)
+- `space-8`: 2rem (32px)
+- `space-10`: 2.5rem (40px)
+- `space-12`: 3rem (48px)
+- `space-16`: 4rem (64px)
+
+### Border Radius
+
+- `rounded-none`: No radius
+- `rounded-sm`: Small radius - `calc(var(--radius) - 4px)`
+- `rounded-md`: Medium radius - `calc(var(--radius) - 2px)`
+- `rounded-lg`: Large radius - `var(--radius)`
+- `rounded-full`: Full radius (circular)
+
+### Shadows
+
+- `shadow-sm`: Small shadow
+- `shadow`: Default shadow
+- `shadow-md`: Medium shadow
+- `shadow-lg`: Large shadow
+- `shadow-xl`: Extra large shadow
+- `shadow-2xl`: 2x extra large shadow
+
+### Animations
+
+- `animate-accordion-down`: Accordion opening animation
+- `animate-accordion-up`: Accordion closing animation
+
+## Code Style Guidelines
+
+### General Principles
+
+- Write clean, readable, and maintainable code
+- Follow the principle of least surprise
+- Be consistent with naming and formatting
+- Comment complex logic, but aim for self-documenting code
+
+### TypeScript Guidelines
+
+#### Naming Conventions
+
+- **Files**: Use `kebab-case.tsx` for component files, `kebab-case.ts` for utility files
+- **Interfaces**: Use PascalCase prefixed with `I` - e.g., `IUserProps`
+- **Types**: Use PascalCase - e.g., `UserType`
+- **Enums**: Use PascalCase - e.g., `UserRole`
+- **Variables**: Use camelCase - e.g., `userData`
+- **Constants**: Use UPPER_SNAKE_CASE for true constants - e.g., `MAX_USERS`
+- **Functions**: Use camelCase - e.g., `getUserData()`
+
+#### TypeScript Best Practices
+
+- Always define explicit return types for functions
+- Use interfaces for objects that will be extended
+- Use type aliases for unions, intersections, and simple object types
+- Avoid using `any` type; use `unknown` when type is uncertain
+- Use generics for reusable components and functions
+
+### React Guidelines
+
+#### Component Structure
+
+- Use functional components with hooks
+- Keep components small and focused on a single responsibility
+- Extract complex logic into custom hooks
+- Use the "props" object destructuring pattern
+
+```tsx
+// Recommended component structure
+const UserCard = ({ user, onSelect }: IUserCardProps) => {
+  // Component logic here
+  
+  return (
+    // JSX here
+  );
+};
+```
+
+#### State Management
+
+- Use local state for component-specific state
+- Use context for shared state across components
+- Consider using libraries for complex state management
+
+#### Component Organization
+
+- Group related components in directories
+- Use index files to export components
+- Arrange imports in a consistent order (React, third-party, local)
+
+### Next.js Guidelines
+
+- Follow the Next.js file-based routing conventions
+- Use server components where appropriate
+- Implement proper data fetching strategies
+- Optimize images using Next.js Image component
+
+## Component Guidelines
+
+### Component Architecture
+
+- Follow atomic design principles where appropriate:
+  - **Atoms**: Basic UI elements (buttons, inputs)
+  - **Molecules**: Combinations of atoms (form fields, cards)
+  - **Organisms**: Complex UI components (headers, forms)
+  - **Templates**: Page layouts
+  - **Pages**: Complete pages
+
+### UI Component Best Practices
+
+- Make components reusable and configurable
+- Use composition over inheritance
+- Implement proper prop validation
+- Design for accessibility from the start
+
+### Responsive Design
+
+- Mobile-first approach
+- Use Tailwind's responsive utilities (`sm:`, `md:`, `lg:`, `xl:`, `2xl:`)
+- Test on multiple device sizes
+
+## Documentation Standards
+
+### Code Comments
+
+- Use JSDoc style comments for functions and components
+- Comment complex logic or non-obvious code
+- Keep comments current with code changes
+
+```tsx
+/**
+ * UserCard component displays user information in a card format
+ * @param {IUser} user - The user data to display
+ * @param {Function} onSelect - Callback function when user is selected
+ * @returns {JSX.Element} - The rendered component
+ */
+```
+
+### Documentation Files
+
+- Include README.md files in key directories
+- Document API endpoints and data models
+- Provide usage examples for complex components
+
+## Accessibility Standards
+
+- Aim for WCAG 2.1 AA compliance
+- Use semantic HTML elements
+- Ensure proper keyboard navigation
+- Maintain proper color contrast ratios
+- Provide text alternatives for non-text content
+- Test with screen readers
+
+---
+
+These guidelines are intended to be a living document that evolves as the project grows. All team members are encouraged to suggest improvements to these guidelines.
+- Test with screen readers
+
+---
+
+These guidelines are intended to be a living document that evolves as the project grows. All team members are encouraged to suggest improvements to these guidelines. 
